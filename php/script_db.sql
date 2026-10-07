@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS "cliente" (
 	PRIMARY KEY("id_cliente")
 );
 
+--INSERT INTO cliente(nome, cliente)
+--VALUES ('Marcelo', 'marcelo@gmail.com');
+
 CREATE TABLE IF NOT EXISTS "ingresso" (
 	"id_ingresso" SERIAL NOT NULL,
 	"id_cliente" INTEGER NOT NULL,
