@@ -1,0 +1,63 @@
+:root {
+    --text-color: whitesmoke;
+    --bg-input-color: whitesmoke;
+    --bg-form-color: rgb(236, 236, 236);
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    flex-direction: column;
+    background: linear-gradient(to right, #020069, #004ca3);
+    justify-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--bg-form-color);
+    border-radius: 5px;
+    padding: 10px;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+input {
+    background: var(--bg-input-color);
+}
+
+form, input {
+    border: 1px black double;
+    border-radius: 5px;
+}
+
+button {
+    color: var(--text-color);
+    font-weight: bold;
+    background-color: darkblue;  
+    border-style: none;
+    border-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+#correto {
+    color:green;
+}
+
+#erro {
+    color: red;
+}
+
+.opcao_cadastro {
+    text-align: center;
+    margin: 0;
+}
