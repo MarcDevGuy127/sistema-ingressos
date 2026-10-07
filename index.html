@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Ingressos</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Tela Login</h1>
-    <form action="" method="post">
+    <h1>Tela de Login</h1>
+    <form action="./php/processar.php" method="post">
         <label>Usuário</label>
-        <input type="text" placeholder="Nome do usuário" name="nome_usuario" id="nome_usuario">
+        <input type="text" placeholder="Nome do usuário" name="nome_usuario" id="nome_usuario" required>
         <label>Email</label>
-        <input type="text" placeholder="E-mail do usuário" name="email_usuario" id="email_usuario">
+        <input type="text" placeholder="E-mail do usuário" name="email_usuario" id="email_usuario" required>
         <button type="submit">Efetuar Login</button>
+        <p class="opcao_cadastro"><a href="#">Cadastra-se</a></p>
     </form>
 </body>
 </html>
