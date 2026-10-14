@@ -41,12 +41,16 @@ form, input {
 button {
     color: var(--text-color);
     font-weight: bold;
-    background-color: darkblue;  
+    background-color: #004da4;  
     border-style: none;
     border-color: aliceblue;
     padding: 5px;
     border-radius: 5px; 
     cursor: pointer;
+}
+
+button:hover {
+    background: darkblue; 
 }
 
 #correto {
