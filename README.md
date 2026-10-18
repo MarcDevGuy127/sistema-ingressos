@@ -1,9 +1,10 @@
 # How to execute
 
-1. Run the script database on PostgreSQL.
+1. Verify the PHP version on your PC by Terminal, using the command:
+`php -v`
 
 2. Start **php** on Terminal:
-`php -localhost:8000`
+`php -S localhost:8000`
 
 3. Browse for the following address:
  `http://localhost:8000/`
