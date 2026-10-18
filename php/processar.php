@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    echo "<h1>Olá, ".  htmlspecialchars($nome_usuario) . "!</h1>";
-}
+    header("Location: ../pages/tela_principal.html");
+    exit;
+    }
 ?>
