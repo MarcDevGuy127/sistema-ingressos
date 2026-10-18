@@ -1,5 +1,7 @@
 :root {
     --text-color: whitesmoke;
+    --text-color-green: green;
+    --text-color-red: rgb(201, 0, 0);
     --bg-input-color: whitesmoke;
     --bg-form-color: rgb(236, 236, 236);
 }
@@ -53,15 +55,38 @@ button:hover {
     background: darkblue; 
 }
 
-#correto {
-    color:green;
-}
-
-#erro {
-    color: red;
-}
-
 .opcao_cadastro {
     text-align: center;
     margin: 0;
+}
+
+.painel {
+    display: grid;
+    box-shadow: #004da4;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+}
+
+.card {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 10px;
+    gap: 6px;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #ffc62a, #ffa228);
+}
+
+.disponibilidade {
+    font-weight: bold;
+
+    #livre {
+        color: var(--text-color-green);
+    }
+
+    #ocupado {
+        color: var(--text-color-red);
+    }
 }
