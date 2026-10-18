@@ -95,7 +95,7 @@ footer {
     flex: 1;
     
     justify-self: center;
-    background-color: black;
+    text-shadow: 10px 5px  4px black;
     color: var(--text-color);
     font-style: normal;
 }
