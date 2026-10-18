@@ -90,3 +90,12 @@ button:hover {
         color: var(--text-color-red);
     }
 }
+
+footer {
+    flex: 1;
+    
+    justify-self: center;
+    background-color: black;
+    color: var(--text-color);
+    font-style: normal;
+}
