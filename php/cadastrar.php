@@ -1,17 +1,34 @@
+
 <?php
 
-// importando arquivo de conexao
+// Importando arquivo de conexão
 require_once 'app.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $consulta = $pdo->prepare("INSERT INTO cliente(nome, email) VALUES (:nome, :email)");
-    $consulta->bindParam(':nome', $nome_usuario);
-    $consulta->bindParam(':email', $email_usuario);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    if ($consulta->execute()) {
-        echo "<script>alert(O cadastro foi realizado com sucesso!);</script>";
-    } else {
-        echo "<script>alert(Erro ao cadastrar!);</script>";
+    $nome_usuario = trim($_POST['nome'] ?? '');
+    $email_usuario = trim($_POST['email'] ?? '');
+
+
+    try {
+        $consulta = $pdo->prepare(
+            "INSERT INTO cliente (nome, email)
+             VALUES (:nome, :email)"
+        );
+
+        $consulta->bindValue(':nome', $nome_usuario);
+        $consulta->bindValue(':email', $email_usuario);
+
+        $consulta->execute();
+
+        echo "<h1>Cadastro realizado com sucesso!</h1>";
+        header("Location: index.html");
+        exit;
+    } catch (PDOException $e) {
+        // Registre os detalhes no log do servidor
+        error_log($e->getMessage());
+
+        echo "<h1>Erro ao cadastrar!</h1>";
     }
 }
 ?>
