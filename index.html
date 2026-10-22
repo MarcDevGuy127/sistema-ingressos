@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>Tela de Login</h1>
-    <form action="../php/processar.php" method="post">
+    <form action="../php/login.php" method="POST">
         <label>Usuário</label>
-        <input type="text" placeholder="Nome do usuário" name="nome_usuario" id="nome_usuario" required>
+        <input type="text" name="nome" id="nome" required>
         <label>Email</label>
-        <input type="text" placeholder="E-mail do usuário" name="email_usuario" id="email_usuario" required>
+        <input type="email" name="email" id="email" required>
         <button type="submit">Efetuar Login</button>
         <p class="opcao_cadastro"><a href="../pages/tela_cadastro.html">Cadastra-se</a></p>
     </form>
