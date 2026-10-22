@@ -1,34 +1,52 @@
-
 <?php
 
-// Importando arquivo de conexão
-require_once 'app.php';
+require_once __DIR__ . '/app.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $nome_usuario = trim($_POST['nome'] ?? '');
-    $email_usuario = trim($_POST['email'] ?? '');
+    // Coletando os dados do formulário
+    $nome = trim($_POST['nome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
 
+    // Validando o nome
+    if ($nome === '') {
+        echo "<script>
+            alert('Informe um nome válido.');
+            window.history.back();
+        </script>";
+        exit;
+    }
+
+    // Validando o e-mail
+    if ($email === '' || filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+        echo "<script>
+            alert('O e-mail informado é inválido.');
+            window.history.back();
+        </script>";
+        exit;
+    }
 
     try {
-        $consulta = $pdo->prepare(
-            "INSERT INTO cliente (nome, email)
-             VALUES (:nome, :email)"
+        $stmt = $pdo->prepare(
+            "INSERT INTO cliente (nome, email) VALUES (?, ?)"
         );
 
-        $consulta->bindValue(':nome', $nome_usuario);
-        $consulta->bindValue(':email', $email_usuario);
+        $stmt->execute([$nome, $email]);
 
-        $consulta->execute();
-
-        echo "<h1>Cadastro realizado com sucesso!</h1>";
-        header("Location: index.html");
+        echo "<script>
+            alert('Cadastro realizado com sucesso!');
+            window.location.href = '../index.html';
+        </script>";
         exit;
+
     } catch (PDOException $e) {
-        // Registre os detalhes no log do servidor
         error_log($e->getMessage());
 
-        echo "<h1>Erro ao cadastrar!</h1>";
+        echo "<script>
+            alert('Não foi possível realizar o cadastro.');
+            window.history.back();
+        </script>";
+        exit;
     }
 }
 ?>
