@@ -1,8 +1,8 @@
 
 <?php
 
-// Importando arquivo de conexão
-require_once 'app.php';
+require_once __DIR__ . '/app.php'; // refenciando arquivo config
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $consulta->execute();
 
         echo "<h1>Cadastro realizado com sucesso!</h1>";
-        header("Location: index.html");
+        header("Location: ../index.html");
         exit;
     } catch (PDOException $e) {
         // Registre os detalhes no log do servidor

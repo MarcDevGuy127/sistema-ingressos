@@ -9,14 +9,21 @@
 <body>
     <h2 class="saudacao"></h2>
     <h1>Ingressos Disponíveis</h1>
+    
+    <button type="button" id="resetar">Resetar todos os cards</button>
+    <a href="../index.html">
+        <button type="button">Sair</button>
+    </a>  
+
     <div class="painel">
         <div class="card">
             <h2>Atração A</h2>
             <p>Show de Música</p>
             <p>Curitiba - PR</p>
-            <button class="button">Comprar Ingressos</button>
+            <button class="button" id="comprar" data-ingresso="1">Comprar Ingressos</button>
             <p class="lugares"><span class="contador">45</span> lugares</p>
             <p class="disponibilidade" id="livre">Livre</p>
+            <div class="ingresso"></div>
         </div>
         <div class="card">
             <h2>Atração B</h2>
@@ -40,6 +47,7 @@
             <p>Curitiba - PR</p>
             <button type="submit">Comprar Ingressos</button>
             <p class="lugares"><span class="contador">45</span> lugares</p>
+            <p class="ingresso"></p>
             <p class="disponibilidade" id="livre">Livre</p>
         </div>
     </div>

@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Criando a sessão do usuário
             session_regenerate_id(true);
 
-            $_SESSION['id'] = $usuario['id'];
+            $_SESSION['id_cliente'] = $usuario['id_cliente'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['email'] = $usuario['email'];
             $_SESSION['logado'] = true;
