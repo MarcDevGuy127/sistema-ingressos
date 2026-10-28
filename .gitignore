@@ -6,10 +6,8 @@ node_modules/
 .env
 .env.*
 
-app.php
-
-# Permite manter o exemplo de configuração
-!.env.example
+# arquivo php
+conn.php
 
 # Logs
 *.log
