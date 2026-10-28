@@ -9,4 +9,5 @@ try {
     echo "alert('Não foi possível cadastrar o usuário!')";
     echo $sql . "<br>" . $e->getMessage();
 }
+$conn = null;
 ?>

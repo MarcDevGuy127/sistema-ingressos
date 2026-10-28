@@ -16,4 +16,6 @@ try {
     echo "alert('Não foi possível cadastrar o evento!')";
     echo $sql . "<br>" . $e->getMessage();
 }
+
+$conn = null;
 ?>

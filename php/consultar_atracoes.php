@@ -5,10 +5,10 @@ try {
   //$stmst = $conn->exec($sql);
   $stmst = $conn->query($sql);
 
-  if ($resultado->rowCount() > 0) {
+  if ($stmst->rowCount() > 0) {
     echo "<table><tr><th>ID</th><th>Título</th><th>Local</th></tr>";
     // Output data of each row
-    while($row = $resultado->fetch()) {
+    while($row = $stmst->fetch()) {
       echo "<tr>";
       echo "<td>" . $row['id'] . "</td>";
       echo "<td>" . $row['titulo_evento'] . "</td>";
@@ -16,7 +16,7 @@ try {
       echo "</tr>";
     }
     echo "</table>";
-    unset($resultado);
+    unset($stmst);
   } else {
     echo "alert('Nenhum registro de eventos foi encontrado!')";
   }
@@ -26,4 +26,5 @@ try {
     echo "alert('Não foi possível consultar os eventos!')";
     echo $sql . "<br>" . $e->getMessage();
 }
+$conn = null;
 ?>
