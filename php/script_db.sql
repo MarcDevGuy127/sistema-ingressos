@@ -1,5 +1,5 @@
-CREATE DATABASE "sistema_ingressos";
-USE "sistema_ingressos";
+CREATE DATABASE "sistema_eventos";
+USE "sistema_eventos";
 
 CREATE TABLE IF NOT EXISTS "cliente" (
 	"id_cliente" SERIAL NOT NULL,
